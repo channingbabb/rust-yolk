@@ -7,7 +7,7 @@ RUN         apt update \
                 && useradd -m -d /home/container container
 
 USER        container
-ENV         USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo
+ENV         USER=container HOME=/home/container CARGO_HOME=/home/container/.cargo PKG_CONFIG_PATH=/usr/lib/pkgconfig
 WORKDIR     /home/container
 
 COPY        --chown=container:container ./../entrypoint.sh /entrypoint.sh
